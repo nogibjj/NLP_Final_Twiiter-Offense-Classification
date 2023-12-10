@@ -9,3 +9,6 @@ torch
 torchmetrics
 scikit-learn
 gensim
+seaborn
+naive-bayes
+nbformat
