@@ -43,6 +43,11 @@
 			]
         }
     },
+    "features": {
+        "ghcr.io/devcontainers/features/nvidia-cuda:1": {
+          "installCudnn": true
+        }
+      },
     // Use 'forwardPorts' to make a list of ports inside the container available locally.
     // "forwardPorts": [],
     // Use 'postCreateCommand' to run commands after the container is created.
