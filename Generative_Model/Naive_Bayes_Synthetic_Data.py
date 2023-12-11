@@ -1,12 +1,18 @@
 
 import numpy as np
 import pandas as pd
-from Naive_Bayes_Real_Data import naive_bayes_model, vocab, combine
+from Naive_Bayes_Real_Data import naive_bayes_model
 import random
 from sklearn.feature_extraction.text import CountVectorizer 
 from sklearn.naive_bayes import MultinomialNB  # Naive Bayes Classifier
 from sklearn.metrics import *
 
+train = pd.read_csv('/workspaces/NLP_Final_Twiiter-Offense-Classification/01_Data/02_Processed/train.csv')
+test = pd.read_csv('/workspaces/NLP_Final_Twiiter-Offense-Classification/01_Data/02_Processed/test.csv')
+# Combining the train and test data for cleaning
+combine=pd.concat([train,test],ignore_index=True)
+
+predicted_naive, vocab, combine = naive_bayes_model(combine)
 
 def generate_data(model_naive , vocab, sample_size):
     

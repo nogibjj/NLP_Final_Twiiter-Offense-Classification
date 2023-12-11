@@ -46,7 +46,7 @@ def naive_bayes_model(tweets_data):
    
     bow_vectorizer = CountVectorizer(ngram_range = (1, 4), max_df=0.90 ,min_df=2 , stop_words='english')
     bow = bow_vectorizer.fit_transform(tweets_data['tokenized'])
-
+    vocab = bow_vectorizer.get_feature_names_out()
     X_train, X_test, y_train, y_test = train_test_split(bow, tweets_data['class'],
                                                     test_size=0.2, random_state=69)
 
@@ -60,7 +60,7 @@ def naive_bayes_model(tweets_data):
     model_naive = MultinomialNB(alpha = best_alpha).fit(X_train, y_train) 
     predicted_naive = model_naive.predict(X_test)
 
-    return predicted_naive, y_test
+    return predicted_naive, y_test , vocab 
 
 
 def conf_mat(tweets_data):
