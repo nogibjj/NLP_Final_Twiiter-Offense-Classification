@@ -12,3 +12,4 @@ gensim
 seaborn
 naive-bayes
 nbformat
+keras
