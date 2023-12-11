@@ -13,3 +13,4 @@ seaborn
 naive-bayes
 nbformat
 keras
+wordcloud
